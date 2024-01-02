@@ -5,12 +5,9 @@ import { getPosts } from "@/lib/data";
 const apiUrl = process.env.API_URL;
 // FETCH DATA WITH AN API
 const getData = async () => {
-  const res = await fetch(
-    `https://github.com/mabozed/next14_tutorial/tree/main/src/app/api/blog`,
-    {
-      next: { revalidate: 3600 },
-    }
-  );
+  const res = await fetch(`http://${apiUrl}/api/blog`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
