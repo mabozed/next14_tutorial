@@ -4,9 +4,10 @@ import PostUser from "@/components/postUser/postUser";
 import { Suspense } from "react";
 import { getPost } from "@/lib/data";
 
+const apiUrl = process.env.API_URL;
 // FETCH DATA WITH AN API
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const res = await fetch(`http://${apiUrl}/api/blog/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");
