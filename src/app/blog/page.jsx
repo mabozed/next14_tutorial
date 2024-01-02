@@ -7,7 +7,9 @@ export const dynamic = "force-dynamic";
 const apiUrl = process.env.API_URL;
 // FETCH DATA WITH AN API
 const getData = async () => {
-  const res = await fetch(`http://${apiUrl}/api/blog`);
+  const res = await fetch(`http://${apiUrl}/api/blog`, {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
