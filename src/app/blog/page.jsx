@@ -2,6 +2,8 @@ import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
 import { getPosts } from "@/lib/data";
 
+export const dynamic = "force-dynamic";
+
 const apiUrl = process.env.API_URL;
 // FETCH DATA WITH AN API
 const getData = async () => {
